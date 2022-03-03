@@ -1325,8 +1325,7 @@
         },
         "type": {
           "description": "Type of extended location.",
-          "type": "string",
-          "readOnly": true
+          "type": "string"
         }
       }
     },
