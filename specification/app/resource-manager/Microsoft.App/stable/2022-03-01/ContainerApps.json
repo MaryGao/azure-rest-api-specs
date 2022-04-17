@@ -346,6 +346,9 @@
               "$ref": "#/definitions/CustomHostnameAnalysisResult"
             }
           },
+          "204": {
+            "description": "No content"
+          },
           "default": {
             "description": "Common error response.",
             "schema": {
