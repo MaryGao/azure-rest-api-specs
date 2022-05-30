@@ -6,6 +6,7 @@ Please also specify `--typescript-sdks-folder=<path to root folder of your azure
 ```yaml $(typescript)
 typescript:
   azure-arm: true
+  override-client-name: ConfidentialLedgerXXXClient
   package-name: "@azure/arm-confidentialledger"
   output-folder: "$(typescript-sdks-folder)/sdk/confidentialledger/arm-confidentialledger"
   payload-flattening-threshold: 1
