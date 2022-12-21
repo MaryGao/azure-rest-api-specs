@@ -27,12 +27,8 @@ Suppressed Rule | Reason
 R3023 OperationsAPIImplementation | Service map is sharing RP with Log Analytics, so this operation won't reach ServiceMap's service endpoint. Hence this rule is not applicable.
 
 ```yaml
-model-validator: true
-semantic-validator: true
-azure-validator: true
 directive:
-  suppress:
-    - R3023
+  - suppress: R3023
 ```
 
 ### Basic Information
@@ -108,8 +104,6 @@ java:
 regenerate-manager: true
 generate-interface: true
 ```
-
-
 
 
 
