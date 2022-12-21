@@ -1589,6 +1589,9 @@
           }
         ],
         "responses": {
+          "200": {
+            "description": "The operation completed successfully."
+          },
           "204": {
             "description": "The operation completed successfully."
           },
@@ -1652,7 +1655,11 @@
             "ref:port",
             "ref:onmachine",
             "ref:clientgroup"
-          ]
+          ],
+          "x-ms-enum": {
+            "name": "ResourceReferenceKind",
+            "modelAsString": true
+          }
         }
       },
       "required": [
@@ -1784,7 +1791,11 @@
             "port",
             "clientGroup",
             "machineGroup"
-          ]
+          ],
+          "x-ms-enum": {
+            "name": "CoreResourceKind",
+            "modelAsString": true
+          }
         }
       },
       "required": [
@@ -2145,7 +2156,11 @@
           "enum": [
             "rel:connection",
             "rel:acceptor"
-          ]
+          ],
+          "x-ms-enum": {
+            "name": "RelationshipKind",
+            "modelAsString": true
+          }
         }
       },
       "required": [
@@ -2756,14 +2771,22 @@
           "description": "The hosting provider of the VM.",
           "enum": [
             "azure"
-          ]
+          ],
+          "x-ms-enum": {
+            "name": "HostingConfigurationProvider",
+            "modelAsString": false
+          }
         },
         "kind": {
           "type": "string",
           "description": "Additional hosting configuration type qualifier.",
           "enum": [
             "provider:azure"
-          ]
+          ],
+          "x-ms-enum": {
+            "name": "HostingConfigurationKind",
+            "modelAsString": true
+          }
         }
       },
       "required": [
@@ -3024,14 +3047,22 @@
           "description": "The hosting provider of the VM.",
           "enum": [
             "azure"
-          ]
+          ],
+          "x-ms-enum": {
+            "name": "ProcessHostingConfigurationProvider",
+            "modelAsString": false
+          }
         },
         "kind": {
           "type": "string",
           "description": "Additional hosting configuration type qualifier.",
           "enum": [
             "provider:azure"
-          ]
+          ],
+          "x-ms-enum": {
+            "name": "ProcessHostingConfigurationKind",
+            "modelAsString": true
+          }
         }
       },
       "required": [
@@ -3170,7 +3201,11 @@
             "map:single-machine-dependency",
             "map:machine-group-dependency",
             "map:machine-list-dependency"
-          ]
+          ],
+          "x-ms-enum": {
+            "name": "MapRequestKind",
+            "modelAsString": true
+          }
         }
       },
       "required": [
