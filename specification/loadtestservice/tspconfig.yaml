@@ -24,6 +24,8 @@ options:
     namespace: "{package-dir}"
   "@azure-tools/typespec-ts":
     package-dir: "load-testing-rest"
+    title: Azure Load Testing
+    description: Azure Load Testing Client
     generateMetadata: true
     generateTest: true
     packageDetails:
