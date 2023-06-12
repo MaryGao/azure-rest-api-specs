@@ -30,7 +30,8 @@ options:
     generateTest: false
     packageDetails:
       name: "@azure-rest/load-testing"
-      description: "This package contains Microsoft Azure LoadTestingClient client library.e"
+      description: "This package contains Microsoft Azure LoadTestingClient client library."
+      version: 1.0.1
   "@azure-tools/typespec-java":
     package-dir: "azure-contoso-widgetmanager"
     namespace: com.azure.contoso.widgetmanager
