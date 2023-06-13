@@ -941,8 +941,7 @@ for metric id).
   lastModifiedBy?: string;
 }
 
-alias ResourceCreatedResponse<T extends TypeSpec.Reflection.Model> = TypeSpec.Http.Response<201> &
-  T;
+alias ResourceCreatedResponse<T extends TypeSpec.Reflection.Model> = TypeSpec.Http.Response<201> & T;
 
-alias ResourceCreatedOrOkResponse<T extends TypeSpec.Reflection.Model> = ResourceCreatedResponse<T> | ResourceOkResponse<T>;
+alias ResourceCreatedOrOkResponse<T extends TypeSpec.Reflection.Model> = ResourceCreatedResponse<T> | TypeSpec.Http.Response<200> & T;
 
