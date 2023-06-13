@@ -1,4 +1,5 @@
 import "@azure-tools/typespec-azure-core";
+import "@azure-tools/typespec-client-generator-core"
 import "@typespec/rest";
 import "./models.tsp";
 
@@ -6,9 +7,11 @@ using Azure.Core;
 using Azure.Core.Traits;
 using TypeSpec.Rest;
 using TypeSpec.Http;
+using Azure.ClientGenerator.Core;
 
 namespace AzureLoadTesting;
 
+@operationGroup
 interface LoadTestAdministrationOperations {
   @summary("Create a new test or update an existing test.")
   @doc("Create a new test or update an existing test.")
@@ -278,6 +281,7 @@ numeric, underscore or hyphen characters.
   >;
 }
 
+@operationGroup
 interface LoadTestRunOperations {
   @summary("Get test run details by name.")
   @doc("Get test run details by name.")
