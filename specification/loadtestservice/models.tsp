@@ -940,3 +940,9 @@ for metric id).
   @visibility("read")
   lastModifiedBy?: string;
 }
+
+alias ResourceCreatedResponse<T extends TypeSpec.Reflection.Model> = TypeSpec.Http.Response<201> &
+  T;
+
+alias ResourceCreatedOrOkResponse<T extends TypeSpec.Reflection.Model> = ResourceCreatedResponse<T> | ResourceOkResponse<T>;
+

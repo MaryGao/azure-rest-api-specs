@@ -28,7 +28,7 @@ numeric, underscore or hyphen characters.
       @body
       body: Test;
     },
-    Test
+    ResourceCreatedOrOkResponse<Test>
   >;
 
   @summary("Delete a test by its name.")
@@ -144,7 +144,7 @@ numeric, underscore or hyphen characters.
       @body
       body: bytes;
     },
-    CreatedResponse & FileInfo
+    ResourceCreatedResponse<FileInfo>
   >;
 
   @summary("Get test file by the file name.")
@@ -221,7 +221,7 @@ numeric, underscore or hyphen characters.
       @body
       body: TestAppComponents;
     },
-    TestAppComponents
+    ResourceCreatedOrOkResponse<TestAppComponents>
   >;
 
   @summary("Get associated app component (collection of azure resources) for the given test.")
@@ -258,7 +258,7 @@ numeric, underscore or hyphen characters.
       @body
       body: TestServerMetricConfig;
     },
-    TestServerMetricConfig
+    ResourceCreatedOrOkResponse<TestServerMetricConfig>
   >;
 
   @summary("List server metrics configuration for the given test.")
@@ -499,7 +499,7 @@ numeric, underscore or hyphen characters.
       @body
       body: TestRunAppComponents;
     },
-    TestRunAppComponents
+    ResourceCreatedOrOkResponse<TestRunAppComponents>
   >;
 
   @summary("""
@@ -542,7 +542,7 @@ numeric, underscore or hyphen characters.
       @body
       body: TestRunServerMetricConfig;
     },
-    TestRunServerMetricConfig
+    ResourceCreatedOrOkResponse<TestRunServerMetricConfig>
   >;
 
   @summary("List server metrics configuration for the given test run.")
