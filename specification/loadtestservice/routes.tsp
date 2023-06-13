@@ -11,7 +11,7 @@ using Azure.ClientGenerator.Core;
 
 namespace AzureLoadTesting;
 
-@operationGroup
+@operationGroup("LoadTestAdministration")
 interface LoadTestAdministrationOperations {
   @summary("Create a new test or update an existing test.")
   @doc("Create a new test or update an existing test.")
@@ -281,7 +281,7 @@ numeric, underscore or hyphen characters.
   >;
 }
 
-@operationGroup
+@operationGroup("LoadTestRun")
 interface LoadTestRunOperations {
   @summary("Get test run details by name.")
   @doc("Get test run details by name.")
