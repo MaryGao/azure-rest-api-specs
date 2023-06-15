@@ -46,12 +46,6 @@
             "schema": {
               "$ref": "#/definitions/DDLBatch"
             }
-          },
-          {
-            "$ref": "#/parameters/ApiVersionParameter"
-          },
-          {
-            "$ref": "#/parameters/UserAgentParameter"
           }
         ],
         "responses": {
@@ -100,12 +94,6 @@
             "description": "Validation Type - Currently only IDWValidation is supported",
             "required": true,
             "type": "string"
-          },
-          {
-            "$ref": "#/parameters/ApiVersionParameter"
-          },
-          {
-            "$ref": "#/parameters/UserAgentParameter"
           }
         ],
         "responses": {
@@ -138,9 +126,7 @@
           {
             "$ref": "#/parameters/ApiVersionParameter"
           },
-          {
-            "$ref": "#/parameters/UserAgentParameter"
-          },
+ 
           {
             "name": "continuationToken",
             "in": "query",
@@ -217,9 +203,7 @@
           {
             "$ref": "#/parameters/ApiVersionParameter"
           },
-          {
-            "$ref": "#/parameters/UserAgentParameter"
-          },
+   
           {
             "name": "continuationToken",
             "in": "query",
@@ -303,9 +287,7 @@
           {
             "$ref": "#/parameters/ApiVersionParameter"
           },
-          {
-            "$ref": "#/parameters/UserAgentParameter"
-          },
+
           {
             "name": "continuationToken",
             "in": "query",
@@ -369,9 +351,7 @@
           {
             "$ref": "#/parameters/ApiVersionParameter"
           },
-          {
-            "$ref": "#/parameters/UserAgentParameter"
-          },
+  
           {
             "name": "continuationToken",
             "in": "query",
@@ -435,9 +415,7 @@
           {
             "$ref": "#/parameters/ApiVersionParameter"
           },
-          {
-            "$ref": "#/parameters/UserAgentParameter"
-          },
+   
           {
             "name": "continuationToken",
             "in": "query",
@@ -508,9 +486,7 @@
           {
             "$ref": "#/parameters/ApiVersionParameter"
           },
-          {
-            "$ref": "#/parameters/UserAgentParameter"
-          },
+ 
           {
             "name": "continuationToken",
             "in": "query",
@@ -581,9 +557,7 @@
           {
             "$ref": "#/parameters/ApiVersionParameter"
           },
-          {
-            "$ref": "#/parameters/UserAgentParameter"
-          },
+ 
           {
             "name": "continuationToken",
             "in": "query",
@@ -639,10 +613,8 @@
           },
           {
             "$ref": "#/parameters/ApiVersionParameter"
-          },
-          {
-            "$ref": "#/parameters/UserAgentParameter"
           }
+    
         ],
         "responses": {
           "200": {
@@ -690,9 +662,6 @@
           },
           {
             "$ref": "#/parameters/ApiVersionParameter"
-          },
-          {
-            "$ref": "#/parameters/UserAgentParameter"
           }
         ],
         "responses": {
@@ -732,9 +701,6 @@
           },
           {
             "$ref": "#/parameters/ApiVersionParameter"
-          },
-          {
-            "$ref": "#/parameters/UserAgentParameter"
           }
         ],
         "responses": {
@@ -800,9 +766,6 @@
           },
           {
             "$ref": "#/parameters/ApiVersionParameter"
-          },
-          {
-            "$ref": "#/parameters/UserAgentParameter"
           }
         ],
         "responses": {
@@ -879,9 +842,7 @@
           {
             "$ref": "#/parameters/ApiVersionParameter"
           },
-          {
-            "$ref": "#/parameters/UserAgentParameter"
-          },
+          
           {
             "name": "continuationToken",
             "in": "query",
@@ -962,9 +923,6 @@
           },
           {
             "$ref": "#/parameters/ApiVersionParameter"
-          },
-          {
-            "$ref": "#/parameters/UserAgentParameter"
           }
         ],
         "responses": {
@@ -1037,9 +995,6 @@
           },
           {
             "$ref": "#/parameters/ApiVersionParameter"
-          },
-          {
-            "$ref": "#/parameters/UserAgentParameter"
           }
         ],
         "responses": {
@@ -1122,9 +1077,6 @@
           },
           {
             "$ref": "#/parameters/ApiVersionParameter"
-          },
-          {
-            "$ref": "#/parameters/UserAgentParameter"
           }
         ],
         "responses": {
@@ -1198,9 +1150,6 @@
           },
           {
             "$ref": "#/parameters/ApiVersionParameter"
-          },
-          {
-            "$ref": "#/parameters/UserAgentParameter"
           }
         ],
         "responses": {
@@ -1239,9 +1188,6 @@
           },
           {
             "$ref": "#/parameters/ApiVersionParameter"
-          },
-          {
-            "$ref": "#/parameters/UserAgentParameter"
           }
         ],
         "responses": {
@@ -2183,14 +2129,6 @@
       "required": true,
       "x-ms-parameter-location": "client",
       "description": "The Synapse client API Version."
-    },
-    "UserAgentParameter": {
-      "name": "User-Agent",
-      "type": "string",
-      "in": "header",
-      "required": true,
-      "x-ms-parameter-location": "client",
-      "description": "User-Agent request header for servers to identify application"
     },
     "Endpoint": {
       "name": "endpoint",
