@@ -26,7 +26,7 @@ options:
     custom-types-subpackage: "implementation.models"
     custom-types: "FunctionCallModelBase,FunctionCallPreset,FunctionCallPresetFunctionCallModel,FunctionNameFunctionCallModel"
   "@azure-tools/typespec-ts":
-    package-dir: "azure-ai-openai"
+    package-dir: "openai"
     emitter-output-dir: "{project-root}/generated"
     generateMetadata: false
     generateTest: false
