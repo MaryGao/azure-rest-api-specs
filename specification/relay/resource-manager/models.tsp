@@ -9,10 +9,14 @@ using Azure.ResourceManager.Foundations;
 
 namespace Microsoft.Relay;
 
+#suppress "@azure-tools/typespec-azure-core/documentation-required" "For backward compatibility"
 union AccessRights {
   string,
+  #suppress "@azure-tools/typespec-azure-core/documentation-required" "For backward compatibility"
   Manage: "Manage",
+  #suppress "@azure-tools/typespec-azure-core/documentation-required" "For backward compatibility"
   Send: "Send",
+  #suppress "@azure-tools/typespec-azure-core/documentation-required" "For backward compatibility"
   Listen: "Listen",
 }
 
@@ -21,9 +25,13 @@ union AccessRights {
  */
 union CreatedByType {
   string,
+  #suppress "@azure-tools/typespec-azure-core/documentation-required" "For backward compatibility"
   User: "User",
+  #suppress "@azure-tools/typespec-azure-core/documentation-required" "For backward compatibility"
   Application: "Application",
+  #suppress "@azure-tools/typespec-azure-core/documentation-required" "For backward compatibility"
   ManagedIdentity: "ManagedIdentity",
+  #suppress "@azure-tools/typespec-azure-core/documentation-required" "For backward compatibility"
   Key: "Key",
 }
 
@@ -32,7 +40,9 @@ union CreatedByType {
  */
 union KeyType {
   string,
+  #suppress "@azure-tools/typespec-azure-core/documentation-required" "For backward compatibility"
   PrimaryKey: "PrimaryKey",
+  #suppress "@azure-tools/typespec-azure-core/documentation-required" "For backward compatibility"
   SecondaryKey: "SecondaryKey",
 }
 
@@ -41,11 +51,17 @@ union KeyType {
  */
 union UnavailableReason {
   string,
+  #suppress "@azure-tools/typespec-azure-core/documentation-required" "For backward compatibility"
   None: "None",
+  #suppress "@azure-tools/typespec-azure-core/documentation-required" "For backward compatibility"
   InvalidName: "InvalidName",
+  #suppress "@azure-tools/typespec-azure-core/documentation-required" "For backward compatibility"
   SubscriptionIsDisabled: "SubscriptionIsDisabled",
+  #suppress "@azure-tools/typespec-azure-core/documentation-required" "For backward compatibility"
   NameInUse: "NameInUse",
+  #suppress "@azure-tools/typespec-azure-core/documentation-required" "For backward compatibility"
   NameInLockdown: "NameInLockdown",
+  #suppress "@azure-tools/typespec-azure-core/documentation-required" "For backward compatibility"
   TooManyNamespaceInCurrentSubscription: "TooManyNamespaceInCurrentSubscription",
 }
 
@@ -54,6 +70,7 @@ union UnavailableReason {
  */
 union SkuName {
   string,
+  #suppress "@azure-tools/typespec-azure-core/documentation-required" "For backward compatibility"
   Standard: "Standard",
 }
 
@@ -62,6 +79,7 @@ union SkuName {
  */
 union SkuTier {
   string,
+  #suppress "@azure-tools/typespec-azure-core/documentation-required" "For backward compatibility"
   Standard: "Standard",
 }
 
@@ -70,9 +88,13 @@ union SkuTier {
  */
 union PrivateLinkConnectionStatus {
   string,
+  #suppress "@azure-tools/typespec-azure-core/documentation-required" "For backward compatibility"
   Pending: "Pending",
+  #suppress "@azure-tools/typespec-azure-core/documentation-required" "For backward compatibility"
   Approved: "Approved",
+  #suppress "@azure-tools/typespec-azure-core/documentation-required" "For backward compatibility"
   Rejected: "Rejected",
+  #suppress "@azure-tools/typespec-azure-core/documentation-required" "For backward compatibility"
   Disconnected: "Disconnected",
 }
 
@@ -81,11 +103,17 @@ union PrivateLinkConnectionStatus {
  */
 union EndPointProvisioningState {
   string,
+  #suppress "@azure-tools/typespec-azure-core/documentation-required" "For backward compatibility"
   Creating: "Creating",
+  #suppress "@azure-tools/typespec-azure-core/documentation-required" "For backward compatibility"
   Updating: "Updating",
+  #suppress "@azure-tools/typespec-azure-core/documentation-required" "For backward compatibility"
   Deleting: "Deleting",
+  #suppress "@azure-tools/typespec-azure-core/documentation-required" "For backward compatibility"
   Succeeded: "Succeeded",
+  #suppress "@azure-tools/typespec-azure-core/documentation-required" "For backward compatibility"
   Canceled: "Canceled",
+  #suppress "@azure-tools/typespec-azure-core/documentation-required" "For backward compatibility"
   Failed: "Failed",
 }
 
@@ -94,8 +122,11 @@ union EndPointProvisioningState {
  */
 union PublicNetworkAccess {
   string,
+  #suppress "@azure-tools/typespec-azure-core/documentation-required" "For backward compatibility"
   Enabled: "Enabled",
+  #suppress "@azure-tools/typespec-azure-core/documentation-required" "For backward compatibility"
   Disabled: "Disabled",
+  #suppress "@azure-tools/typespec-azure-core/documentation-required" "For backward compatibility"
   SecuredByPerimeter: "SecuredByPerimeter",
 }
 
@@ -104,7 +135,9 @@ union PublicNetworkAccess {
  */
 union DefaultAction {
   string,
+  #suppress "@azure-tools/typespec-azure-core/documentation-required" "For backward compatibility"
   Allow: "Allow",
+  #suppress "@azure-tools/typespec-azure-core/documentation-required" "For backward compatibility"
   Deny: "Deny",
 }
 
@@ -113,12 +146,14 @@ union DefaultAction {
  */
 union NetworkRuleIPAction {
   string,
+  #suppress "@azure-tools/typespec-azure-core/documentation-required" "For backward compatibility"
   Allow: "Allow",
 }
 
 /**
  * WCF relay type.
  */
+#suppress "@azure-tools/typespec-azure-core/no-enum" "For backward compatibility"
 enum Relaytype {
   NetTcp,
   Http,
@@ -127,6 +162,7 @@ enum Relaytype {
 /**
  * Properties supplied to create or update AuthorizationRule
  */
+#suppress "@azure-tools/typespec-azure-resource-manager/arm-resource-provisioning-state" "For backward compatibility"
 model AuthorizationRuleProperties {
   /**
    * The rights associated with the rule.
@@ -211,6 +247,7 @@ model RegenerateAccessKeyParameters {
 /**
  * Properties of the HybridConnection.
  */
+#suppress "@azure-tools/typespec-azure-resource-manager/arm-resource-provisioning-state" "For backward compatibility"
 model HybridConnectionProperties {
   /**
    * The time the hybrid connection was created.
@@ -297,6 +334,7 @@ model RelayNamespaceProperties {
   /**
    * Provisioning state of the Namespace.
    */
+  #suppress "@azure-tools/typespec-azure-resource-manager/arm-resource-provisioning-state" "For backward compatibility"
   @visibility(Lifecycle.Read)
   provisioningState?: string;
 
@@ -402,6 +440,7 @@ model TrackedResource extends Resource {
   /**
    * Resource tags.
    */
+  #suppress "@azure-tools/typespec-azure-resource-manager/arm-no-record" "For backward compatibility"
   tags?: Record<string>;
 }
 
@@ -441,6 +480,8 @@ model RelayUpdateParameters extends ResourceNamespacePatch {
   /**
    * Description of Relay namespace.
    */
+  #suppress "@azure-tools/typespec-azure-core/no-private-usage" "For backward compatibility"
+  @Azure.ResourceManager.Private.conditionalClientFlatten
   properties?: RelayNamespaceProperties;
 }
 
@@ -452,12 +493,14 @@ model ResourceNamespacePatch extends Resource {
   /**
    * Resource tags.
    */
+  #suppress "@azure-tools/typespec-azure-resource-manager/arm-no-record" "For backward compatibility"
   tags?: Record<string>;
 }
 
 /**
  * Properties of PrivateLinkResource
  */
+#suppress "@azure-tools/typespec-azure-resource-manager/arm-resource-provisioning-state" "For backward compatibility"
 model PrivateLinkResourceProperties {
   /**
    * The private link resource group id.
@@ -478,6 +521,7 @@ model PrivateLinkResourceProperties {
 /**
  * NetworkRuleSet properties
  */
+#suppress "@azure-tools/typespec-azure-resource-manager/arm-resource-provisioning-state" "For backward compatibility"
 model NetworkRuleSetProperties {
   /**
    * Value that indicates whether Trusted Service Access is Enabled or not.
@@ -547,6 +591,8 @@ model Operation {
   /**
    * Properties of the operation
    */
+  #suppress "@azure-tools/typespec-azure-core/no-private-usage" "For backward compatibility"
+  @Azure.ResourceManager.Private.conditionalClientFlatten
   properties?: Record<unknown>;
 }
 
@@ -582,6 +628,7 @@ model OperationDisplay {
 /**
  * Properties of the WCF relay.
  */
+#suppress "@azure-tools/typespec-azure-resource-manager/arm-resource-provisioning-state" "For backward compatibility"
 model WcfRelayProperties {
   /**
    * Returns true if the relay is dynamic; otherwise, false.

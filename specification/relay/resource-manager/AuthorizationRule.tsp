@@ -26,16 +26,44 @@ model AuthorizationRule
 }
 
 @armResourceOperations
+interface AuthorizationRuleOps
+  extends Azure.ResourceManager.Legacy.LegacyOperations<
+      {
+        ...ApiVersionParameter,
+        ...SubscriptionIdParameter,
+        ...ResourceGroupParameter,
+        ...Azure.ResourceManager.Legacy.Provider,
+        ...KeysOf<ResourceNameParameter<
+          Resource = RelayNamespace,
+          KeyName = "namespaceName",
+          SegmentName = "namespaces",
+          NamePattern = ""
+        >>,
+      },
+      KeysOf<ResourceNameParameter<
+        Resource = AuthorizationRule,
+        KeyName = "authorizationRuleName",
+        SegmentName = "authorizationRules",
+        NamePattern = ""
+      >>
+    > {}
+
+@armResourceOperations
 interface AuthorizationRules {
   /**
    * Authorization rule for a namespace by name.
    */
-  getAuthorizationRule is ArmResourceRead<AuthorizationRule>;
+  #suppress "@azure-tools/typespec-azure-core/no-openapi" "non-standard operations"
+  @operationId("Namespaces_GetAuthorizationRule")
+  getAuthorizationRule is AuthorizationRuleOps.Read<AuthorizationRule>;
 
   /**
    * Creates or updates an authorization rule for a namespace.
    */
-  createOrUpdateAuthorizationRule is ArmResourceCreateOrReplaceSync<
+  #suppress "@azure-tools/typespec-azure-core/no-openapi" "non-standard operations"
+  #suppress "@azure-tools/typespec-azure-resource-manager/arm-put-operation-response-codes" "For backward compatibility"
+  @operationId("Namespaces_CreateOrUpdateAuthorizationRule")
+  createOrUpdateAuthorizationRule is AuthorizationRuleOps.CreateOrUpdateSync<
     AuthorizationRule,
     Response = ArmResourceUpdatedResponse<AuthorizationRule>
   >;
@@ -43,17 +71,23 @@ interface AuthorizationRules {
   /**
    * Deletes a namespace authorization rule.
    */
-  deleteAuthorizationRule is ArmResourceDeleteSync<AuthorizationRule>;
+  #suppress "@azure-tools/typespec-azure-core/no-openapi" "non-standard operations"
+  @operationId("Namespaces_DeleteAuthorizationRule")
+  deleteAuthorizationRule is AuthorizationRuleOps.DeleteSync<AuthorizationRule>;
 
   /**
    * Authorization rules for a namespace.
    */
-  listAuthorizationRules is ArmResourceListByParent<AuthorizationRule>;
+  #suppress "@azure-tools/typespec-azure-core/no-openapi" "non-standard operations"
+  @operationId("Namespaces_ListAuthorizationRules")
+  listAuthorizationRules is AuthorizationRuleOps.List<AuthorizationRule>;
 
   /**
    * Primary and secondary connection strings to the namespace.
    */
-  listKeys is ArmResourceActionSync<
+  #suppress "@azure-tools/typespec-azure-core/no-openapi" "non-standard operations"
+  @operationId("Namespaces_ListKeys")
+  listKeys is AuthorizationRuleOps.ActionSync<
     AuthorizationRule,
     void,
     ArmResponse<AccessKeys>
@@ -62,7 +96,167 @@ interface AuthorizationRules {
   /**
    * Regenerates the primary or secondary connection strings to the namespace.
    */
-  regenerateKeys is ArmResourceActionSync<
+  #suppress "@azure-tools/typespec-azure-core/no-openapi" "non-standard operations"
+  @operationId("Namespaces_RegenerateKeys")
+  regenerateKeys is AuthorizationRuleOps.ActionSync<
+    AuthorizationRule,
+    RegenerateAccessKeyParameters,
+    ArmResponse<AccessKeys>
+  >;
+}
+@armResourceOperations
+interface HybridConnectionOps
+  extends Azure.ResourceManager.Legacy.LegacyOperations<
+      {
+        ...ApiVersionParameter,
+        ...SubscriptionIdParameter,
+        ...ResourceGroupParameter,
+        ...Azure.ResourceManager.Legacy.Provider,
+        ...KeysOf<ResourceNameParameter<
+          Resource = RelayNamespace,
+          KeyName = "namespaceName",
+          SegmentName = "namespaces",
+          NamePattern = ""
+        >>,
+        ...KeysOf<ResourceNameParameter<
+          Resource = HybridConnection,
+          KeyName = "hybridConnectionName",
+          SegmentName = "hybridConnections",
+          NamePattern = ""
+        >>,
+      },
+      KeysOf<ResourceNameParameter<
+        Resource = AuthorizationRule,
+        KeyName = "authorizationRuleName",
+        SegmentName = "authorizationRules",
+        NamePattern = ""
+      >>
+    > {}
+
+@armResourceOperations
+interface HybridConnections {
+  /**
+   * Hybrid connection authorization rule for a hybrid connection by name.
+   */
+  getAuthorizationRule is HybridConnectionOps.Read<AuthorizationRule>;
+
+  /**
+   * Creates or updates an authorization rule for a hybrid connection.
+   */
+  #suppress "@azure-tools/typespec-azure-resource-manager/arm-put-operation-response-codes" "For backward compatibility"
+  createOrUpdateAuthorizationRule is HybridConnectionOps.CreateOrUpdateSync<
+    AuthorizationRule,
+    Response = ArmResourceUpdatedResponse<AuthorizationRule>
+  >;
+
+  /**
+   * Deletes a hybrid connection authorization rule.
+   */
+  deleteAuthorizationRule is HybridConnectionOps.DeleteSync<AuthorizationRule>;
+
+  /**
+   * Authorization rules for a hybrid connection.
+   */
+  listAuthorizationRules is HybridConnectionOps.List<AuthorizationRule>;
+
+  /**
+   * Primary and secondary connection strings to the hybrid connection.
+   */
+  listKeys is HybridConnectionOps.ActionSync<
+    AuthorizationRule,
+    void,
+    ArmResponse<AccessKeys>
+  >;
+
+  /**
+   * Regenerates the primary or secondary connection strings to the hybrid connection.
+   */
+  regenerateKeys is HybridConnectionOps.ActionSync<
+    AuthorizationRule,
+    RegenerateAccessKeyParameters,
+    ArmResponse<AccessKeys>
+  >;
+}
+@armResourceOperations
+interface WCFRelayOps
+  extends Azure.ResourceManager.Legacy.LegacyOperations<
+      {
+        ...ApiVersionParameter,
+        ...SubscriptionIdParameter,
+        ...ResourceGroupParameter,
+        ...Azure.ResourceManager.Legacy.Provider,
+        ...KeysOf<ResourceNameParameter<
+          Resource = RelayNamespace,
+          KeyName = "namespaceName",
+          SegmentName = "namespaces",
+          NamePattern = ""
+        >>,
+        ...KeysOf<ResourceNameParameter<
+          Resource = WcfRelay,
+          KeyName = "relayName",
+          SegmentName = "wcfRelays",
+          NamePattern = ""
+        >>,
+      },
+      KeysOf<ResourceNameParameter<
+        Resource = AuthorizationRule,
+        KeyName = "authorizationRuleName",
+        SegmentName = "authorizationRules",
+        NamePattern = ""
+      >>
+    > {}
+
+@armResourceOperations
+interface WCFRelays {
+  /**
+   * Get authorizationRule for a WCF relay by name.
+   */
+  #suppress "@azure-tools/typespec-azure-core/no-openapi" "non-standard operations"
+  @operationId("WCFRelays_GetAuthorizationRule")
+  getAuthorizationRule is WCFRelayOps.Read<AuthorizationRule>;
+
+  /**
+   * Creates or updates an authorization rule for a WCF relay.
+   */
+  #suppress "@azure-tools/typespec-azure-core/no-openapi" "non-standard operations"
+  #suppress "@azure-tools/typespec-azure-resource-manager/arm-put-operation-response-codes" "For backward compatibility"
+  @operationId("WCFRelays_CreateOrUpdateAuthorizationRule")
+  createOrUpdateAuthorizationRule is WCFRelayOps.CreateOrUpdateSync<
+    AuthorizationRule,
+    Response = ArmResourceUpdatedResponse<AuthorizationRule>
+  >;
+
+  /**
+   * Deletes a WCF relay authorization rule.
+   */
+  #suppress "@azure-tools/typespec-azure-core/no-openapi" "non-standard operations"
+  @operationId("WCFRelays_DeleteAuthorizationRule")
+  deleteAuthorizationRule is WCFRelayOps.DeleteSync<AuthorizationRule>;
+
+  /**
+   * Authorization rules for a WCF relay.
+   */
+  #suppress "@azure-tools/typespec-azure-core/no-openapi" "non-standard operations"
+  @operationId("WCFRelays_ListAuthorizationRules")
+  listAuthorizationRules is WCFRelayOps.List<AuthorizationRule>;
+
+  /**
+   * Primary and secondary connection strings to the WCF relay.
+   */
+  #suppress "@azure-tools/typespec-azure-core/no-openapi" "non-standard operations"
+  @operationId("WCFRelays_ListKeys")
+  listKeys is WCFRelayOps.ActionSync<
+    AuthorizationRule,
+    void,
+    ArmResponse<AccessKeys>
+  >;
+
+  /**
+   * Regenerates the primary or secondary connection strings to the WCF relay.
+   */
+  #suppress "@azure-tools/typespec-azure-core/no-openapi" "non-standard operations"
+  @operationId("WCFRelays_RegenerateKeys")
+  regenerateKeys is WCFRelayOps.ActionSync<
     AuthorizationRule,
     RegenerateAccessKeyParameters,
     ArmResponse<AccessKeys>
@@ -78,5 +272,17 @@ interface AuthorizationRules {
   "The authorization rule parameters."
 );
 @@doc(AuthorizationRules.regenerateKeys::parameters.body,
+  "Parameters supplied to regenerate authorization rule."
+);
+@@doc(HybridConnections.createOrUpdateAuthorizationRule::parameters.resource,
+  "The authorization rule parameters."
+);
+@@doc(HybridConnections.regenerateKeys::parameters.body,
+  "Parameters supplied to regenerate authorization rule."
+);
+@@doc(WCFRelays.createOrUpdateAuthorizationRule::parameters.resource,
+  "The authorization rule parameters."
+);
+@@doc(WCFRelays.regenerateKeys::parameters.body,
   "Parameters supplied to regenerate authorization rule."
 );

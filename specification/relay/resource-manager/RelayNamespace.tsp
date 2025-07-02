@@ -25,6 +25,7 @@ model RelayNamespace
   /**
    * SKU of the namespace.
    */
+  #suppress "@azure-tools/typespec-azure-resource-manager/arm-resource-invalid-envelope-property" "For backward compatibility"
   sku?: Sku;
 }
 
@@ -33,11 +34,15 @@ interface RelayNamespaces {
   /**
    * Returns the description for the specified namespace.
    */
+  #suppress "@azure-tools/typespec-azure-core/no-openapi" "non-standard operations"
+  @operationId("Namespaces_Get")
   get is ArmResourceRead<RelayNamespace>;
 
   /**
    * Create Azure Relay namespace.
    */
+  #suppress "@azure-tools/typespec-azure-core/no-openapi" "non-standard operations"
+  @operationId("Namespaces_CreateOrUpdate")
   createOrUpdate is ArmResourceCreateOrReplaceAsync<
     RelayNamespace,
     LroHeaders = ArmLroLocationHeader & Azure.Core.Foundations.RetryAfterHeader
@@ -46,7 +51,9 @@ interface RelayNamespaces {
   /**
    * Creates or updates a namespace. Once created, this namespace's resource manifest is immutable. This operation is idempotent.
    */
+  #suppress "@azure-tools/typespec-azure-core/no-openapi" "non-standard operations"
   @patch(#{ implicitOptionality: false })
+  @operationId("Namespaces_Update")
   update is ArmCustomPatchSync<
     RelayNamespace,
     PatchModel = RelayUpdateParameters,
@@ -56,6 +63,9 @@ interface RelayNamespaces {
   /**
    * Deletes an existing namespace. This operation also removes all associated resources under the namespace.
    */
+  #suppress "@azure-tools/typespec-azure-core/no-openapi" "non-standard operations"
+  #suppress "@azure-tools/typespec-azure-resource-manager/arm-delete-operation-response-codes" "For backward compatibility"
+  @operationId("Namespaces_Delete")
   delete is ArmResourceDeleteWithoutOkAsync<
     RelayNamespace,
     Response = ArmDeletedResponse | ArmDeleteAcceptedLroResponse | ArmDeletedNoContentResponse
@@ -64,11 +74,15 @@ interface RelayNamespaces {
   /**
    * Lists all the available namespaces within the ResourceGroup.
    */
+  #suppress "@azure-tools/typespec-azure-core/no-openapi" "non-standard operations"
+  @operationId("Namespaces_ListByResourceGroup")
   listByResourceGroup is ArmResourceListByParent<RelayNamespace>;
 
   /**
    * Lists all the available namespaces within the subscription regardless of the resourceGroups.
    */
+  #suppress "@azure-tools/typespec-azure-core/no-openapi" "non-standard operations"
+  @operationId("Namespaces_List")
   list is ArmListBySubscription<RelayNamespace>;
 }
 
