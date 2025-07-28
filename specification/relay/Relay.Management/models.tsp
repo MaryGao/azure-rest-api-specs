@@ -378,7 +378,7 @@ model RelayNamespaceProperties {
   /**
    * This determines if traffic is allowed over public network. By default it is enabled.
    */
-  publicNetworkAccess?: PublicNetworkAccess;
+  publicNetworkAccess?: PublicNetworkAccess = "Enabled";
 }
 
 /**
@@ -677,3 +677,14 @@ model WcfRelayProperties {
    */
   userMetadata?: string;
 }
+
+/**
+ * Result of the List private link resources operation.
+ */
+model PrivateLinkResourcesListResult{
+  @doc("A collection of private link resources")
+  value: PrivateLinkResource[];
+
+  @doc("A link for the next page of private link resources.")
+  nextLink?: ResourceLocation<PrivateLinkResource>;
+};

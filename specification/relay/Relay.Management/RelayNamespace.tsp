@@ -15,12 +15,7 @@ namespace Microsoft.Relay;
  */
 model RelayNamespace
   is Azure.ResourceManager.TrackedResource<RelayNamespaceProperties> {
-  ...ResourceNameParameter<
-    Resource = RelayNamespace,
-    KeyName = "namespaceName",
-    SegmentName = "namespaces",
-    NamePattern = ""
-  >;
+  ...RelayNamespaceNameParameter;
 
   /**
    * SKU of the namespace.
@@ -28,6 +23,17 @@ model RelayNamespace
   #suppress "@azure-tools/typespec-azure-resource-manager/arm-resource-invalid-envelope-property" "For backward compatibility"
   sku?: Sku;
 }
+
+@@maxLength(RelayNamespaceNameParameter.name, 50);
+@@minLength(RelayNamespaceNameParameter.name, 6);
+@@doc(RelayNamespaceNameParameter.name, "The namespace name");
+model RelayNamespaceNameParameter
+  is ResourceNameParameter<
+    Resource = RelayNamespace,
+    KeyName = "namespaceName",
+    SegmentName = "namespaces",
+    NamePattern = ""
+  >;
 
 @armResourceOperations
 interface RelayNamespaces {
@@ -86,9 +92,6 @@ interface RelayNamespaces {
   list is ArmListBySubscription<RelayNamespace>;
 }
 
-@@maxLength(RelayNamespace.name, 50);
-@@minLength(RelayNamespace.name, 6);
-@@doc(RelayNamespace.name, "The namespace name");
 @@doc(RelayNamespace.properties, "Description of Relay namespace");
 @@doc(RelayNamespaces.createOrUpdate::parameters.resource,
   "Parameters supplied to create a namespace resource."

@@ -1,0 +1,1852 @@
+{
+  "info": {
+    "x-ms-code-generation-settings__deleted": {
+      "name": "RelayManagementClient"
+    }
+  },
+  "paths": {
+    "/providers/Microsoft.Relay/operations": {
+      "get": {
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": {
+                "__old": "#/definitions/OperationListResult",
+                "__new": "../../../../../common-types/resource-management/v3/types.json#/definitions/OperationListResult"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/providers/Microsoft.Relay/checkNameAvailability": {
+      "post": {
+        "parameters": [
+          [
+            "~",
+            {
+              "name": {
+                "__old": "parameters",
+                "__new": "body"
+              }
+            }
+          ]
+        ]
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}": {
+      "get": {
+        "parameters": [
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/NamespaceNameParameter",
+              "name__added": "namespaceName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string",
+              "minLength__added": 6,
+              "maxLength__added": 50
+            }
+          ]
+        ]
+      },
+      "put": {
+        "parameters": [
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/NamespaceNameParameter",
+              "name__added": "namespaceName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string",
+              "minLength__added": 6,
+              "maxLength__added": 50
+            }
+          ],
+          [
+            " "
+          ]
+        ]
+      },
+      "patch": {
+        "parameters": [
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/NamespaceNameParameter",
+              "name__added": "namespaceName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string",
+              "minLength__added": 6,
+              "maxLength__added": 50
+            }
+          ],
+          [
+            " "
+          ]
+        ]
+      },
+      "delete": {
+        "parameters": [
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/NamespaceNameParameter",
+              "name__added": "namespaceName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string",
+              "minLength__added": 6,
+              "maxLength__added": 50
+            }
+          ]
+        ]
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/authorizationRules": {
+      "get": {
+        "parameters": [
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/NamespaceNameParameter",
+              "name__added": "namespaceName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string"
+            }
+          ]
+        ]
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/authorizationRules/{authorizationRuleName}": {
+      "get": {
+        "parameters": [
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/NamespaceNameParameter",
+              "name__added": "namespaceName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string"
+            }
+          ],
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/AuthorizationRuleNameParameter",
+              "name__added": "authorizationRuleName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string"
+            }
+          ]
+        ]
+      },
+      "put": {
+        "parameters": [
+          [
+            "-",
+            {
+              "$ref": "../../common/v1/definitions.json#/parameters/NamespaceNameParameter"
+            }
+          ],
+          [
+            "-",
+            {
+              "$ref": "../../common/v1/definitions.json#/parameters/AuthorizationRuleNameParameter"
+            }
+          ],
+          [
+            "+",
+            {
+              "name": "namespaceName",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          [
+            "+",
+            {
+              "name": "authorizationRuleName",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          [
+            " "
+          ]
+        ]
+      },
+      "delete": {
+        "parameters": [
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/NamespaceNameParameter",
+              "name__added": "namespaceName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string"
+            }
+          ],
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/AuthorizationRuleNameParameter",
+              "name__added": "authorizationRuleName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string"
+            }
+          ]
+        ]
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/authorizationRules/{authorizationRuleName}/listKeys": {
+      "post": {
+        "parameters": [
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/NamespaceNameParameter",
+              "name__added": "namespaceName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string"
+            }
+          ],
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/AuthorizationRuleNameParameter",
+              "name__added": "authorizationRuleName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string"
+            }
+          ]
+        ]
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/authorizationRules/{authorizationRuleName}/regenerateKeys": {
+      "post": {
+        "parameters": [
+          [
+            "-",
+            {
+              "$ref": "../../common/v1/definitions.json#/parameters/NamespaceNameParameter"
+            }
+          ],
+          [
+            "-",
+            {
+              "$ref": "../../common/v1/definitions.json#/parameters/AuthorizationRuleNameParameter"
+            }
+          ],
+          [
+            "+",
+            {
+              "name": "namespaceName",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          [
+            "+",
+            {
+              "name": "authorizationRuleName",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          [
+            " "
+          ]
+        ]
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/hybridConnections": {
+      "get": {
+        "parameters": [
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/NamespaceNameParameter",
+              "name__added": "namespaceName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string",
+              "minLength__added": 6,
+              "maxLength__added": 50
+            }
+          ]
+        ]
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/hybridConnections/{hybridConnectionName}": {
+      "get": {
+        "parameters": [
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/NamespaceNameParameter",
+              "name__added": "namespaceName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string",
+              "minLength__added": 6,
+              "maxLength__added": 50
+            }
+          ],
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/HybridConnectionNameParameter",
+              "name__added": "hybridConnectionName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string",
+              "minLength__added": 1
+            }
+          ]
+        ]
+      },
+      "put": {
+        "parameters": [
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/NamespaceNameParameter",
+              "name__added": "namespaceName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string",
+              "minLength__added": 6,
+              "maxLength__added": 50
+            }
+          ],
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/HybridConnectionNameParameter",
+              "name__added": "hybridConnectionName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string",
+              "minLength__added": 1
+            }
+          ],
+          [
+            " "
+          ]
+        ]
+      },
+      "delete": {
+        "parameters": [
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/NamespaceNameParameter",
+              "name__added": "namespaceName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string",
+              "minLength__added": 6,
+              "maxLength__added": 50
+            }
+          ],
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/HybridConnectionNameParameter",
+              "name__added": "hybridConnectionName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string",
+              "minLength__added": 1
+            }
+          ]
+        ]
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/hybridConnections/{hybridConnectionName}/authorizationRules": {
+      "get": {
+        "parameters": [
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/NamespaceNameParameter",
+              "name__added": "namespaceName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string"
+            }
+          ],
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/HybridConnectionNameParameter",
+              "name__added": "hybridConnectionName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string"
+            }
+          ]
+        ]
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/hybridConnections/{hybridConnectionName}/authorizationRules/{authorizationRuleName}": {
+      "get": {
+        "parameters": [
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/NamespaceNameParameter",
+              "name__added": "namespaceName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string"
+            }
+          ],
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/HybridConnectionNameParameter",
+              "name__added": "hybridConnectionName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string"
+            }
+          ],
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/AuthorizationRuleNameParameter",
+              "name__added": "authorizationRuleName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string"
+            }
+          ]
+        ]
+      },
+      "put": {
+        "parameters": [
+          [
+            "-",
+            {
+              "$ref": "../../common/v1/definitions.json#/parameters/NamespaceNameParameter"
+            }
+          ],
+          [
+            "-",
+            {
+              "$ref": "../../common/v1/definitions.json#/parameters/HybridConnectionNameParameter"
+            }
+          ],
+          [
+            "-",
+            {
+              "$ref": "../../common/v1/definitions.json#/parameters/AuthorizationRuleNameParameter"
+            }
+          ],
+          [
+            "+",
+            {
+              "name": "namespaceName",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          [
+            "+",
+            {
+              "name": "hybridConnectionName",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          [
+            "+",
+            {
+              "name": "authorizationRuleName",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          [
+            " "
+          ]
+        ]
+      },
+      "delete": {
+        "parameters": [
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/NamespaceNameParameter",
+              "name__added": "namespaceName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string"
+            }
+          ],
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/HybridConnectionNameParameter",
+              "name__added": "hybridConnectionName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string"
+            }
+          ],
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/AuthorizationRuleNameParameter",
+              "name__added": "authorizationRuleName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string"
+            }
+          ]
+        ]
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/hybridConnections/{hybridConnectionName}/authorizationRules/{authorizationRuleName}/listKeys": {
+      "post": {
+        "parameters": [
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/NamespaceNameParameter",
+              "name__added": "namespaceName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string"
+            }
+          ],
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/HybridConnectionNameParameter",
+              "name__added": "hybridConnectionName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string"
+            }
+          ],
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/AuthorizationRuleNameParameter",
+              "name__added": "authorizationRuleName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string"
+            }
+          ]
+        ]
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/hybridConnections/{hybridConnectionName}/authorizationRules/{authorizationRuleName}/regenerateKeys": {
+      "post": {
+        "parameters": [
+          [
+            "-",
+            {
+              "$ref": "../../common/v1/definitions.json#/parameters/NamespaceNameParameter"
+            }
+          ],
+          [
+            "-",
+            {
+              "$ref": "../../common/v1/definitions.json#/parameters/HybridConnectionNameParameter"
+            }
+          ],
+          [
+            "-",
+            {
+              "$ref": "../../common/v1/definitions.json#/parameters/AuthorizationRuleNameParameter"
+            }
+          ],
+          [
+            "+",
+            {
+              "name": "namespaceName",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          [
+            "+",
+            {
+              "name": "hybridConnectionName",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          [
+            "+",
+            {
+              "name": "authorizationRuleName",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          [
+            " "
+          ]
+        ]
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/networkRuleSets/default": {
+      "get": {
+        "parameters": [
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/NamespaceNameParameter",
+              "name__added": "namespaceName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string",
+              "minLength__added": 6,
+              "maxLength__added": 50
+            }
+          ]
+        ]
+      },
+      "put": {
+        "parameters": [
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/NamespaceNameParameter",
+              "name__added": "namespaceName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string",
+              "minLength__added": 6,
+              "maxLength__added": 50
+            }
+          ],
+          [
+            " "
+          ]
+        ]
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/privateEndpointConnections": {
+      "get": {
+        "externalDocs__deleted": {
+          "url": "https://msdn.microsoft.com/en-us/library/azure/mt639412.aspx"
+        },
+        "parameters": [
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/NamespaceNameParameter",
+              "name__added": "namespaceName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string",
+              "minLength__added": 6,
+              "maxLength__added": 50
+            }
+          ]
+        ]
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/privateEndpointConnections/{privateEndpointConnectionName}": {
+      "get": {
+        "externalDocs__deleted": {
+          "url": "https://msdn.microsoft.com/en-us/library/azure/mt639379.aspx"
+        },
+        "parameters": [
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/NamespaceNameParameter",
+              "name__added": "namespaceName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string",
+              "minLength__added": 6,
+              "maxLength__added": 50
+            }
+          ],
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/PrivateEndpointConnectionNameParameter",
+              "name__added": "privateEndpointConnectionName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string"
+            }
+          ]
+        ]
+      },
+      "put": {
+        "externalDocs__deleted": {
+          "url": "https://msdn.microsoft.com/en-us/library/azure/mt639408.aspx"
+        },
+        "parameters": [
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/NamespaceNameParameter",
+              "name__added": "namespaceName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string",
+              "minLength__added": 6,
+              "maxLength__added": 50
+            }
+          ],
+          [
+            "-",
+            {
+              "$ref": "../../common/v1/definitions.json#/parameters/PrivateEndpointConnectionNameParameter"
+            }
+          ],
+          [
+            "+",
+            {
+              "name": "privateEndpointConnectionName",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          [
+            " "
+          ]
+        ]
+      },
+      "delete": {
+        "externalDocs__deleted": {
+          "url": "https://msdn.microsoft.com/en-us/library/azure/mt639389.aspx"
+        },
+        "parameters": [
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/NamespaceNameParameter",
+              "name__added": "namespaceName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string",
+              "minLength__added": 6,
+              "maxLength__added": 50
+            }
+          ],
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/PrivateEndpointConnectionNameParameter",
+              "name__added": "privateEndpointConnectionName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string"
+            }
+          ]
+        ]
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/privateLinkResources": {
+      "get": {
+        "externalDocs__deleted": {
+          "url": "https://msdn.microsoft.com/en-us/library/azure/mt639379.aspx"
+        },
+        "x-ms-pageable__added": {
+          "nextLinkName": "nextLink"
+        },
+        "parameters": [
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/NamespaceNameParameter",
+              "name__added": "namespaceName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string",
+              "minLength__added": 6,
+              "maxLength__added": 50
+            }
+          ]
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": {
+                "__old": "#/definitions/PrivateLinkResourcesListResult",
+                "__new": "#/definitions/PrivateLinkResourceListResult"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/privateLinkResources/{privateLinkResourceName}": {
+      "get": {
+        "externalDocs__deleted": {
+          "url": "https://msdn.microsoft.com/en-us/library/azure/mt639379.aspx"
+        },
+        "parameters": [
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/NamespaceNameParameter",
+              "name__added": "namespaceName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string",
+              "minLength__added": 6,
+              "maxLength__added": 50
+            }
+          ],
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/PrivateLinkResourceNameParameter",
+              "name__added": "privateLinkResourceName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string"
+            }
+          ]
+        ]
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/wcfRelays": {
+      "get": {
+        "parameters": [
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/NamespaceNameParameter",
+              "name__added": "namespaceName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string",
+              "minLength__added": 6,
+              "maxLength__added": 50
+            }
+          ]
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "$ref": {
+                "__old": "#/definitions/WcfRelaysListResult",
+                "__new": "#/definitions/WcfRelayListResult"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/wcfRelays/{relayName}": {
+      "get": {
+        "parameters": [
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/NamespaceNameParameter",
+              "name__added": "namespaceName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string",
+              "minLength__added": 6,
+              "maxLength__added": 50
+            }
+          ],
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/RelayNameParameter",
+              "name__added": "relayName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string",
+              "minLength__added": 1
+            }
+          ]
+        ]
+      },
+      "put": {
+        "parameters": [
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/NamespaceNameParameter",
+              "name__added": "namespaceName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string",
+              "minLength__added": 6,
+              "maxLength__added": 50
+            }
+          ],
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/RelayNameParameter",
+              "name__added": "relayName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string",
+              "minLength__added": 1
+            }
+          ],
+          [
+            " "
+          ]
+        ]
+      },
+      "delete": {
+        "parameters": [
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/NamespaceNameParameter",
+              "name__added": "namespaceName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string",
+              "minLength__added": 6,
+              "maxLength__added": 50
+            }
+          ],
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/RelayNameParameter",
+              "name__added": "relayName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string",
+              "minLength__added": 1
+            }
+          ]
+        ]
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/wcfRelays/{relayName}/authorizationRules": {
+      "get": {
+        "parameters": [
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/NamespaceNameParameter",
+              "name__added": "namespaceName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string"
+            }
+          ],
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/RelayNameParameter",
+              "name__added": "relayName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string"
+            }
+          ]
+        ],
+        "responses": {
+          "default__added": {
+            "description": "ignore",
+            "schema": {
+              "$ref": "../../../../../common-types/resource-management/v3/types.json#/definitions/ErrorResponse"
+            }
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/wcfRelays/{relayName}/authorizationRules/{authorizationRuleName}": {
+      "get": {
+        "parameters": [
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/NamespaceNameParameter",
+              "name__added": "namespaceName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string"
+            }
+          ],
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/RelayNameParameter",
+              "name__added": "relayName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string"
+            }
+          ],
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/AuthorizationRuleNameParameter",
+              "name__added": "authorizationRuleName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string"
+            }
+          ]
+        ]
+      },
+      "put": {
+        "parameters": [
+          [
+            "-",
+            {
+              "$ref": "../../common/v1/definitions.json#/parameters/NamespaceNameParameter"
+            }
+          ],
+          [
+            "-",
+            {
+              "$ref": "../../common/v1/definitions.json#/parameters/RelayNameParameter"
+            }
+          ],
+          [
+            "-",
+            {
+              "$ref": "../../common/v1/definitions.json#/parameters/AuthorizationRuleNameParameter"
+            }
+          ],
+          [
+            "+",
+            {
+              "name": "namespaceName",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          [
+            "+",
+            {
+              "name": "relayName",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          [
+            "+",
+            {
+              "name": "authorizationRuleName",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          [
+            " "
+          ]
+        ]
+      },
+      "delete": {
+        "parameters": [
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/NamespaceNameParameter",
+              "name__added": "namespaceName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string"
+            }
+          ],
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/RelayNameParameter",
+              "name__added": "relayName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string"
+            }
+          ],
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/AuthorizationRuleNameParameter",
+              "name__added": "authorizationRuleName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string"
+            }
+          ]
+        ]
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/wcfRelays/{relayName}/authorizationRules/{authorizationRuleName}/listKeys": {
+      "post": {
+        "parameters": [
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/NamespaceNameParameter",
+              "name__added": "namespaceName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string"
+            }
+          ],
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/RelayNameParameter",
+              "name__added": "relayName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string"
+            }
+          ],
+          [
+            "~",
+            {
+              "$ref__deleted": "../../common/v1/definitions.json#/parameters/AuthorizationRuleNameParameter",
+              "name__added": "authorizationRuleName",
+              "in__added": "path",
+              "required__added": true,
+              "type__added": "string"
+            }
+          ]
+        ]
+      }
+    },
+    "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Relay/namespaces/{namespaceName}/wcfRelays/{relayName}/authorizationRules/{authorizationRuleName}/regenerateKeys": {
+      "post": {
+        "parameters": [
+          [
+            "-",
+            {
+              "$ref": "../../common/v1/definitions.json#/parameters/NamespaceNameParameter"
+            }
+          ],
+          [
+            "-",
+            {
+              "$ref": "../../common/v1/definitions.json#/parameters/RelayNameParameter"
+            }
+          ],
+          [
+            "-",
+            {
+              "$ref": "../../common/v1/definitions.json#/parameters/AuthorizationRuleNameParameter"
+            }
+          ],
+          [
+            "+",
+            {
+              "name": "namespaceName",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          [
+            "+",
+            {
+              "name": "relayName",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          [
+            "+",
+            {
+              "name": "authorizationRuleName",
+              "in": "path",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          [
+            " "
+          ]
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "Operation__deleted": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "readOnly": true
+        },
+        "isDataAction": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "display": {
+          "$ref": "#/definitions/OperationDisplay",
+          "readOnly": true
+        },
+        "origin": {
+          "type": "string",
+          "readOnly": true
+        },
+        "properties": {
+          "type": "object",
+          "x-ms-client-flatten": true
+        }
+      }
+    },
+    "OperationDisplay__deleted": {
+      "type": "object",
+      "properties": {
+        "provider": {
+          "type": "string",
+          "readOnly": true
+        },
+        "resource": {
+          "type": "string",
+          "readOnly": true
+        },
+        "operation": {
+          "type": "string",
+          "readOnly": true
+        },
+        "description": {
+          "type": "string",
+          "readOnly": true
+        }
+      }
+    },
+    "OperationListResult__deleted": {
+      "type": "object",
+      "description": "[Placeholder] Discription for page model",
+      "properties": {
+        "value": {
+          "type": "array",
+          "description": "[Placeholder] Discription for value property",
+          "items": {
+            "$ref": "#/definitions/Operation"
+          },
+          "readOnly": true
+        },
+        "nextLink": {
+          "type": "string",
+          "format": "uri",
+          "description": "[Placeholder] Discription for nextLink property"
+        }
+      }
+    },
+    "PrivateLinkResourcesListResult__deleted": {
+      "type": "object",
+      "description": "[Placeholder] Discription for page model",
+      "properties": {
+        "value": {
+          "type": "array",
+          "description": "[Placeholder] Discription for value property",
+          "items": {
+            "$ref": "#/definitions/PrivateLinkResource"
+          }
+        },
+        "nextLink": {
+          "type": "string",
+          "format": "uri",
+          "description": "[Placeholder] Discription for nextLink property"
+        }
+      }
+    },
+    "WcfRelaysListResult__deleted": {
+      "type": "object",
+      "description": "[Placeholder] Discription for page model",
+      "properties": {
+        "value": {
+          "type": "array",
+          "description": "[Placeholder] Discription for value property",
+          "items": {
+            "$ref": "#/definitions/WcfRelay"
+          }
+        },
+        "nextLink": {
+          "type": "string",
+          "format": "uri",
+          "description": "[Placeholder] Discription for nextLink property"
+        }
+      }
+    },
+    "AuthorizationRuleProperties__added": {
+      "type": "object",
+      "properties": {
+        "rights": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "Manage",
+              "Send",
+              "Listen"
+            ],
+            "x-ms-enum": {
+              "name": "AccessRights",
+              "modelAsString": true
+            }
+          }
+        }
+      },
+      "required": [
+        "rights"
+      ]
+    },
+    "HybridConnectionProperties__added": {
+      "type": "object",
+      "properties": {
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
+        },
+        "listenerCount": {
+          "type": "integer",
+          "format": "int32",
+          "maximum": 25,
+          "readOnly": true
+        },
+        "requiresClientAuthorization": {
+          "type": "boolean"
+        },
+        "userMetadata": {
+          "type": "string"
+        }
+      }
+    },
+    "NetworkRuleSetProperties__added": {
+      "type": "object",
+      "properties": {
+        "trustedServiceAccessEnabled": {
+          "type": "boolean"
+        },
+        "defaultAction": {
+          "type": "string",
+          "enum": [
+            "Allow",
+            "Deny"
+          ],
+          "x-ms-enum": {
+            "name": "DefaultAction",
+            "modelAsString": true
+          }
+        },
+        "publicNetworkAccess": {
+          "type": "string",
+          "enum": [
+            "Enabled",
+            "Disabled",
+            "SecuredByPerimeter"
+          ],
+          "x-ms-enum": {
+            "name": "PublicNetworkAccess",
+            "modelAsString": true
+          }
+        },
+        "ipRules": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/NWRuleSetIpRules"
+          }
+        }
+      }
+    },
+    "PrivateLinkResourceListResult__added": {
+      "type": "object",
+      "description": "[Placeholder] Discription for page model",
+      "properties": {
+        "value": {
+          "type": "array",
+          "description": "[Placeholder] Discription for value property",
+          "items": {
+            "$ref": "#/definitions/PrivateLinkResource"
+          }
+        },
+        "nextLink": {
+          "type": "string",
+          "format": "uri",
+          "description": "[Placeholder] Discription for nextLink property"
+        }
+      },
+      "required": [
+        "value"
+      ]
+    },
+    "Resource__added": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "readOnly": true
+        },
+        "name": {
+          "type": "string",
+          "readOnly": true
+        },
+        "type": {
+          "type": "string",
+          "readOnly": true
+        }
+      }
+    },
+    "TrackedResource__added": {
+      "type": "object",
+      "properties": {
+        "location": {
+          "type": "string",
+          "x-ms-mutability": [
+            "create",
+            "read"
+          ]
+        },
+        "tags": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "location"
+      ],
+      "allOf": [
+        {
+          "$ref": "#/definitions/Resource"
+        }
+      ]
+    },
+    "WcfRelayListResult__added": {
+      "type": "object",
+      "description": "[Placeholder] Discription for page model",
+      "properties": {
+        "value": {
+          "type": "array",
+          "description": "[Placeholder] Discription for value property",
+          "items": {
+            "$ref": "#/definitions/WcfRelay"
+          }
+        },
+        "nextLink": {
+          "type": "string",
+          "format": "uri",
+          "description": "[Placeholder] Discription for nextLink property"
+        }
+      },
+      "required": [
+        "value"
+      ]
+    },
+    "WcfRelayProperties__added": {
+      "type": "object",
+      "properties": {
+        "isDynamic": {
+          "type": "boolean",
+          "readOnly": true
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
+        },
+        "listenerCount": {
+          "type": "integer",
+          "format": "int32",
+          "maximum": 25,
+          "readOnly": true
+        },
+        "relayType": {
+          "type": "string",
+          "enum": [
+            "NetTcp",
+            "Http"
+          ],
+          "x-ms-enum": {
+            "name": "Relaytype",
+            "modelAsString": false
+          }
+        },
+        "requiresClientAuthorization": {
+          "type": "boolean"
+        },
+        "requiresTransportSecurity": {
+          "type": "boolean"
+        },
+        "userMetadata": {
+          "type": "string"
+        }
+      }
+    },
+    "AuthorizationRule": {
+      "properties": {
+        "systemData__deleted": {
+          "$ref": "../../../../../common-types/resource-management/v3/types.json#/definitions/systemData",
+          "readOnly": true
+        },
+        "properties": {
+          "type__deleted": "object",
+          "properties__deleted": {
+            "rights": {
+              "type": "array",
+              "description": "The rights associated with the rule.",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "Manage",
+                  "Send",
+                  "Listen"
+                ],
+                "x-ms-enum": {
+                  "name": "AccessRights",
+                  "modelAsString": true
+                }
+              }
+            }
+          },
+          "required__deleted": [
+            "rights"
+          ],
+          "$ref__added": "#/definitions/AuthorizationRuleProperties"
+        }
+      },
+      "allOf": [
+        [
+          "~",
+          {
+            "$ref": {
+              "__old": "../../common/v1/definitions.json#/definitions/ProxyResource",
+              "__new": "../../../../../common-types/resource-management/v3/types.json#/definitions/ProxyResource"
+            }
+          }
+        ]
+      ]
+    },
+    "AuthorizationRuleListResult": {
+      "required__added": [
+        "value"
+      ]
+    },
+    "HybridConnection": {
+      "properties": {
+        "systemData__deleted": {
+          "$ref": "../../../../../common-types/resource-management/v3/types.json#/definitions/systemData",
+          "readOnly": true
+        },
+        "properties": {
+          "type__deleted": "object",
+          "properties__deleted": {
+            "createdAt": {
+              "type": "string",
+              "format": "date-time",
+              "description": "The time the hybrid connection was created.",
+              "readOnly": true
+            },
+            "updatedAt": {
+              "type": "string",
+              "format": "date-time",
+              "description": "The time the namespace was updated.",
+              "readOnly": true
+            },
+            "listenerCount": {
+              "type": "integer",
+              "format": "int32",
+              "description": "The number of listeners for this hybrid connection. Note that min : 1 and max:25 are supported.",
+              "minimum": 0,
+              "maximum": 25,
+              "readOnly": true
+            },
+            "requiresClientAuthorization": {
+              "type": "boolean",
+              "description": "Returns true if client authorization is needed for this hybrid connection; otherwise, false."
+            },
+            "userMetadata": {
+              "type": "string",
+              "description": "The usermetadata is a placeholder to store user-defined string data for the hybrid connection endpoint. For example, it can be used to store descriptive data, such as a list of teams and their contact information. Also, user-defined configuration settings can be stored."
+            }
+          },
+          "$ref__added": "#/definitions/HybridConnectionProperties"
+        }
+      },
+      "allOf": [
+        [
+          "~",
+          {
+            "$ref": {
+              "__old": "../../common/v1/definitions.json#/definitions/ProxyResource",
+              "__new": "../../../../../common-types/resource-management/v3/types.json#/definitions/ProxyResource"
+            }
+          }
+        ]
+      ]
+    },
+    "HybridConnectionListResult": {
+      "required__added": [
+        "value"
+      ]
+    },
+    "NWRuleSetIpRules": {
+      "x-ms-client-flatten__deleted": true
+    },
+    "NetworkRuleSet": {
+      "properties": {
+        "systemData__deleted": {
+          "$ref": "../../../../../common-types/resource-management/v3/types.json#/definitions/systemData",
+          "readOnly": true
+        },
+        "properties": {
+          "type__deleted": "object",
+          "properties__deleted": {
+            "trustedServiceAccessEnabled": {
+              "type": "boolean",
+              "description": "Value that indicates whether Trusted Service Access is Enabled or not."
+            },
+            "defaultAction": {
+              "type": "string",
+              "description": "Default Action for Network Rule Set",
+              "enum": [
+                "Allow",
+                "Deny"
+              ],
+              "x-ms-enum": {
+                "name": "DefaultAction",
+                "modelAsString": true
+              }
+            },
+            "publicNetworkAccess": {
+              "type": "string",
+              "description": "This determines if traffic is allowed over public network. By default it is enabled",
+              "enum": [
+                "Disabled",
+                "Enabled",
+                "SecuredByPerimeter"
+              ],
+              "x-ms-enum": {
+                "name": "PublicNetworkAccess",
+                "modelAsString": true
+              }
+            },
+            "ipRules": {
+              "type": "array",
+              "description": "List of IpRules",
+              "items": {
+                "$ref": "#/definitions/NWRuleSetIpRules"
+              },
+              "x-ms-identifiers": []
+            }
+          },
+          "$ref__added": "#/definitions/NetworkRuleSetProperties"
+        }
+      },
+      "allOf": [
+        [
+          "~",
+          {
+            "$ref": {
+              "__old": "../../common/v1/definitions.json#/definitions/Resource",
+              "__new": "../../../../../common-types/resource-management/v3/types.json#/definitions/ProxyResource"
+            }
+          }
+        ]
+      ]
+    },
+    "PrivateEndpointConnection": {
+      "properties": {
+        "systemData__deleted": {
+          "$ref": "../../../../../common-types/resource-management/v3/types.json#/definitions/systemData",
+          "readOnly": true
+        }
+      },
+      "allOf": [
+        [
+          "~",
+          {
+            "$ref": {
+              "__old": "../../common/v1/definitions.json#/definitions/ProxyResource",
+              "__new": "../../../../../common-types/resource-management/v3/types.json#/definitions/ProxyResource"
+            }
+          }
+        ]
+      ]
+    },
+    "PrivateEndpointConnectionListResult": {
+      "required__added": [
+        "value"
+      ]
+    },
+    "PrivateLinkResource": {
+      "allOf__added": [
+        {
+          "$ref": "../../../../../common-types/resource-management/v3/types.json#/definitions/ProxyResource"
+        }
+      ],
+      "properties": {
+        "id__deleted": {
+          "type": "string"
+        },
+        "name__deleted": {
+          "type": "string"
+        },
+        "type__deleted": {
+          "type": "string"
+        }
+      }
+    },
+    "RelayNamespace": {
+      "properties": {
+        "systemData__deleted": {
+          "$ref": "../../../../../common-types/resource-management/v3/types.json#/definitions/systemData",
+          "readOnly": true
+        }
+      },
+      "allOf": [
+        [
+          "~",
+          {
+            "$ref": {
+              "__old": "../../common/v1/definitions.json#/definitions/TrackedResource",
+              "__new": "../../../../../common-types/resource-management/v3/types.json#/definitions/TrackedResource"
+            }
+          }
+        ]
+      ]
+    },
+    "RelayNamespaceListResult": {
+      "required__added": [
+        "value"
+      ]
+    },
+    "RelayNamespaceProperties": {
+      "properties": {
+        "publicNetworkAccess": {
+          "default__deleted": "Enabled"
+        }
+      }
+    },
+    "ResourceNamespacePatch": {
+      "allOf": [
+        [
+          "~",
+          {
+            "$ref": {
+              "__old": "../../common/v1/definitions.json#/definitions/Resource",
+              "__new": "#/definitions/Resource"
+            }
+          }
+        ]
+      ]
+    },
+    "WcfRelay": {
+      "properties": {
+        "systemData__deleted": {
+          "$ref": "../../../../../common-types/resource-management/v3/types.json#/definitions/systemData",
+          "readOnly": true
+        },
+        "properties": {
+          "type__deleted": "object",
+          "properties__deleted": {
+            "isDynamic": {
+              "type": "boolean",
+              "description": "Returns true if the relay is dynamic; otherwise, false.",
+              "readOnly": true
+            },
+            "createdAt": {
+              "type": "string",
+              "format": "date-time",
+              "description": "The time the WCF relay was created.",
+              "readOnly": true
+            },
+            "updatedAt": {
+              "type": "string",
+              "format": "date-time",
+              "description": "The time the namespace was updated.",
+              "readOnly": true
+            },
+            "listenerCount": {
+              "type": "integer",
+              "format": "int32",
+              "description": "The number of listeners for this relay. Note that min :1 and max:25 are supported.",
+              "minimum": 0,
+              "maximum": 25,
+              "readOnly": true
+            },
+            "relayType": {
+              "type": "string",
+              "description": "WCF relay type.",
+              "enum": [
+                "NetTcp",
+                "Http"
+              ],
+              "x-ms-enum": {
+                "name": "Relaytype",
+                "modelAsString": false
+              }
+            },
+            "requiresClientAuthorization": {
+              "type": "boolean",
+              "description": "Returns true if client authorization is needed for this relay; otherwise, false."
+            },
+            "requiresTransportSecurity": {
+              "type": "boolean",
+              "description": "Returns true if transport security is needed for this relay; otherwise, false."
+            },
+            "userMetadata": {
+              "type": "string",
+              "description": "The usermetadata is a placeholder to store user-defined string data for the WCF Relay endpoint. For example, it can be used to store descriptive data, such as list of teams and their contact information. Also, user-defined configuration settings can be stored."
+            }
+          },
+          "$ref__added": "#/definitions/WcfRelayProperties"
+        }
+      },
+      "allOf": [
+        [
+          "~",
+          {
+            "$ref": {
+              "__old": "../../common/v1/definitions.json#/definitions/ProxyResource",
+              "__new": "../../../../../common-types/resource-management/v3/types.json#/definitions/ProxyResource"
+            }
+          }
+        ]
+      ]
+    }
+  }
+}

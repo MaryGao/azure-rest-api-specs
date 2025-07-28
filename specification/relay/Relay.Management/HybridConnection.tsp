@@ -25,6 +25,16 @@ model HybridConnection
   >;
 }
 
+@@minLength(HybridConnectionNameParameter.name, 1);
+@@doc(HybridConnectionNameParameter.name, "The hybrid connection name.");
+model HybridConnectionNameParameter
+  is ResourceNameParameter<
+    Resource = HybridConnection,
+    KeyName = "hybridConnectionName",
+    SegmentName = "hybridConnections",
+    NamePattern = ""
+  >;
+
 @armResourceOperations
 interface HybridConnectionOperationGroup {
   /**

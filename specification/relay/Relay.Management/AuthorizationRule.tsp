@@ -17,13 +17,18 @@ namespace Microsoft.Relay;
 @parentResource(RelayNamespace)
 model AuthorizationRule
   is Azure.ResourceManager.ProxyResource<AuthorizationRuleProperties> {
-  ...ResourceNameParameter<
+  ...AuthorizationRuleNameParameter;
+}
+
+@@minLength(AuthorizationRuleNameParameter.name, 1);
+@@doc(AuthorizationRuleNameParameter.name, "The authorization rule name.");
+model AuthorizationRuleNameParameter
+  is ResourceNameParameter<
     Resource = AuthorizationRule,
     KeyName = "authorizationRuleName",
     SegmentName = "authorizationRules",
     NamePattern = ""
   >;
-}
 
 @armResourceOperations
 interface AuthorizationRuleOps
@@ -33,19 +38,9 @@ interface AuthorizationRuleOps
         ...SubscriptionIdParameter,
         ...ResourceGroupParameter,
         ...Azure.ResourceManager.Legacy.Provider,
-        ...KeysOf<ResourceNameParameter<
-          Resource = RelayNamespace,
-          KeyName = "namespaceName",
-          SegmentName = "namespaces",
-          NamePattern = ""
-        >>,
+        ...KeysOf<RelayNamespaceNameParameter>,
       },
-      KeysOf<ResourceNameParameter<
-        Resource = AuthorizationRule,
-        KeyName = "authorizationRuleName",
-        SegmentName = "authorizationRules",
-        NamePattern = ""
-      >>
+      KeysOf<AuthorizationRuleNameParameter>
     > {}
 
 @armResourceOperations
@@ -112,25 +107,10 @@ interface HybridConnectionOps
         ...SubscriptionIdParameter,
         ...ResourceGroupParameter,
         ...Azure.ResourceManager.Legacy.Provider,
-        ...KeysOf<ResourceNameParameter<
-          Resource = RelayNamespace,
-          KeyName = "namespaceName",
-          SegmentName = "namespaces",
-          NamePattern = ""
-        >>,
-        ...KeysOf<ResourceNameParameter<
-          Resource = HybridConnection,
-          KeyName = "hybridConnectionName",
-          SegmentName = "hybridConnections",
-          NamePattern = ""
-        >>,
+        ...KeysOf<RelayNamespaceNameParameter>,
+        ...KeysOf<HybridConnectionNameParameter>,
       },
-      KeysOf<ResourceNameParameter<
-        Resource = AuthorizationRule,
-        KeyName = "authorizationRuleName",
-        SegmentName = "authorizationRules",
-        NamePattern = ""
-      >>
+      KeysOf<AuthorizationRuleNameParameter>
     > {}
 
 @armResourceOperations
@@ -185,25 +165,10 @@ interface WCFRelayOps
         ...SubscriptionIdParameter,
         ...ResourceGroupParameter,
         ...Azure.ResourceManager.Legacy.Provider,
-        ...KeysOf<ResourceNameParameter<
-          Resource = RelayNamespace,
-          KeyName = "namespaceName",
-          SegmentName = "namespaces",
-          NamePattern = ""
-        >>,
-        ...KeysOf<ResourceNameParameter<
-          Resource = WcfRelay,
-          KeyName = "relayName",
-          SegmentName = "wcfRelays",
-          NamePattern = ""
-        >>,
+        ...KeysOf<RelayNamespaceNameParameter>,
+        ...KeysOf<WcfRelayNameParameter>,
       },
-      KeysOf<ResourceNameParameter<
-        Resource = AuthorizationRule,
-        KeyName = "authorizationRuleName",
-        SegmentName = "authorizationRules",
-        NamePattern = ""
-      >>
+      KeysOf<AuthorizationRuleNameParameter>
     > {}
 
 @armResourceOperations
@@ -263,8 +228,6 @@ interface WCFRelays {
   >;
 }
 
-@@minLength(AuthorizationRule.name, 1);
-@@doc(AuthorizationRule.name, "The authorization rule name.");
 @@doc(AuthorizationRule.properties,
   "Properties supplied to create or update AuthorizationRule"
 );

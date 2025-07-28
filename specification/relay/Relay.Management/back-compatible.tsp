@@ -21,6 +21,9 @@ using Microsoft.Relay;
   "parameters"
 );
 @@clientName(WCFRelays.regenerateKeys::parameters.body, "parameters");
+@@clientName(NamespacesOperationGroup.checkNameAvailability::parameters.body,
+  "parameters"
+);
 #suppress "deprecated" "@flattenProperty decorator is not recommended to use."
 @@flattenProperty(AuthorizationRule.properties);
 
